@@ -1,0 +1,156 @@
+HackerRank Orchestrate - Development Transcript
+
+============================================================
+
+## Project Setup (30 mins)
+
+Started the HackerRank Orchestrate hackathon project for the Message Notification Router.
+Cloned the starter repository, created a Python virtual environment, installed dependencies, and verified the dataset structure.
+
+Actions:
+- Created virtual environment
+- Installed Python packages
+- Verified dataset files
+
+------------------------------------------------------------
+
+## Data Loading (20 mins)
+
+Implemented the data loading module.
+Loaded all CSV files including messages, users, groups, business accounts, message history, images, and voice notes using pandas.
+
+Actions:
+- Implemented loader.py
+- Verified row counts for every dataset
+
+------------------------------------------------------------
+
+## Gemini API Integration (40 mins)
+
+Configured the Gemini API using environment variables.
+Tested API connectivity and updated the implementation to use the latest supported Gemini model.
+
+Actions:
+- Created .env
+- Added Gemini API key
+- Tested API connection
+- Fixed deprecated model issues
+
+------------------------------------------------------------
+
+## Message Classification (45 mins)
+
+Created an AI prompt to classify WhatsApp messages.
+Extracted message type, urgency, importance, promotion probability, risk score, summary, and reasoning from Gemini responses.
+
+Actions:
+- Implemented prompts.py
+- Implemented gemini_client.py
+- Implemented classifier.py
+
+------------------------------------------------------------
+
+## Personalization Module (20 mins)
+
+Implemented user personalization using historical notification behavior and user preferences.
+
+Actions:
+- Created personalization.py
+- Used user profile information during routing
+
+------------------------------------------------------------
+
+## History Engine (30 mins)
+
+Implemented retrieval of historical messages to provide supporting evidence for routing decisions.
+
+Actions:
+- Created history_engine.py
+- Selected relevant historical message IDs
+
+------------------------------------------------------------
+
+## Business Priority Engine (15 mins)
+
+Added business account reasoning using business metadata and user-business interaction history.
+
+Actions:
+- Created business_engine.py
+
+------------------------------------------------------------
+
+## Group Priority Engine (15 mins)
+
+Implemented group-based routing using group metadata and membership information.
+
+Actions:
+- Created group_engine.py
+
+------------------------------------------------------------
+
+## Notification Router (45 mins)
+
+Implemented the routing engine by combining AI analysis, personalization, business information, group information, and historical evidence to decide between:
+
+- notify
+- digest
+- mute
+
+Actions:
+- Created router.py
+
+------------------------------------------------------------
+
+## Output Generation (20 mins)
+
+Generated predictions for every message in dataset/messages.csv and produced the required output.csv file.
+
+Actions:
+- Updated main.py
+- Generated output.csv
+
+------------------------------------------------------------
+
+## Image Processing (30 mins)
+
+Added an image processing module and prepared an OCR pipeline to analyze image-based WhatsApp messages.
+
+Actions:
+- Created image_processor.py
+
+------------------------------------------------------------
+
+## Voice Note Processing (25 mins)
+
+Added a voice processing module and prepared a transcription pipeline for voice note analysis.
+
+Actions:
+- Created voice_processor.py
+
+------------------------------------------------------------
+
+## Evaluation (20 mins)
+
+Implemented an evaluation workflow to validate submission requirements.
+
+Checks included:
+- Correct number of predictions
+- Required output columns
+- Confidence values between 0 and 1
+
+Actions:
+- Created evaluator.py
+- Evaluation passed successfully
+
+------------------------------------------------------------
+
+## Final Review (30 mins)
+
+Verified that the complete project runs successfully from the terminal.
+Confirmed output generation, Gemini integration, personalization, history retrieval, business reasoning, group reasoning, image and voice processing modules, and evaluation workflow.
+
+Prepared the project for HackerRank submission.
+
+============================================================
+
+End of Development Transcript
